@@ -34,6 +34,14 @@ def clear():
     for layer in world:
         layer.clear()
 
-def collide(obj1, obj2):
-    
+def collide(a, b):
+    al, ab, ar, at = a.get_bb()
+    bl, bb, br, bt = b.get_bb()
+
+    if al > br: return False
+    if ar < bl: return False
+    if at < bb: return False
+    if ab > bt: return False
+
+    return True
 

@@ -170,6 +170,7 @@ class Boy:
     def draw(self):
         self.state_machine.draw()
         self.font.draw(self.x-10, self.y + 50, f'{self.ball_count:02d}', (255, 255, 0))
+        draw_rectangle(*self.get_bb())
 
     def fire_ball(self):
         if self.ball_count > 0:
@@ -178,4 +179,4 @@ class Boy:
             game_world.add_object(ball, 1)
 
     def get_bb(self):
-        return self.x - 10, self.y - 50, self.x+10,self.y+50
+        return self.x - 35, self.y - 50, self.x+35,self.y+50
