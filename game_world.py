@@ -34,6 +34,6 @@ def clear():
     for layer in world:
         layer.clear()
 
-
-
+def collide(obj1, obj2):
+    
 
